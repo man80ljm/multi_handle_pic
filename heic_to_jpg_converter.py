@@ -1,50 +1,47 @@
 """
-Image Format Converter
+Image Format Converter (No OpenCV)
 
 Dependencies:
 - Python 3.6+
 - PyQt6: GUI framework
 - pillow-heif: For HEIC format support
-- opencv-python: For image processing
-- numpy: Dependency of opencv-python
 - PIL (Pillow): For image handling
 
 Install dependencies:
-pip install PyQt6 pillow-heif opencv-python numpy Pillow -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install PyQt6 pillow-heif Pillow -i https://pypi.tuna.tsinghua.edu.cn/simple
 """
 
 import sys
 import os
 from PIL import Image
 import pillow_heif
-import cv2
-import numpy as np
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton,
     QFileDialog, QProgressBar, QLabel, QDialog, QComboBox, QDialogButtonBox
 )
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
-from concurrent.futures import ThreadPoolExecutor, as_completed
-import threading
+import logging
+
+# 设置日志
+logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
 
 class ConverterThread(QThread):
-    progress_updated = pyqtSignal(int)  # 进度更新信号
-    status_updated = pyqtSignal(str)   # 状态更新信号
-    conversion_finished = pyqtSignal() # 转换完成信号
+    progress_updated = pyqtSignal(int)
+    status_updated = pyqtSignal(str)
+    conversion_finished = pyqtSignal()
 
     def __init__(self, files, output_format, ico_size):
         super().__init__()
         self.files = files
         self.output_format = output_format
         self.ico_size = ico_size
-        self.lock = threading.Lock()  # 用于线程安全的进度更新
 
     def process_image(self, file_path, output_base_dir, format_mapping):
-        """处理单个文件，支持逐帧处理以优化内存使用"""
+        logging.info(f"Starting to process: {file_path}")
         try:
-            self.status_updated.emit(f"Processing file: {file_path}")
             # 处理 HEIC 文件
             if file_path.lower().endswith((".heic", ".heic")):
+                logging.debug(f"Processing HEIC file: {file_path}")
                 heif_file = pillow_heif.read_heif(file_path)
                 image = Image.frombytes(
                     heif_file.mode,
@@ -52,7 +49,7 @@ class ConverterThread(QThread):
                     heif_file.data,
                     "raw",
                 )
-                images_info = [(image, False)]  # (image, is_pil_image)
+                images_info = [(image, False)]
             else:
                 # 打开图像并逐帧处理
                 image = Image.open(file_path)
@@ -65,6 +62,7 @@ class ConverterThread(QThread):
                         page_num += 1
                     except EOFError:
                         break
+                logging.debug(f"Extracted {len(images_info)} frames from {file_path}")
 
             # 为多帧图像创建子文件夹
             output_filename_base = os.path.splitext(os.path.basename(file_path))[0]
@@ -77,53 +75,47 @@ class ConverterThread(QThread):
 
             # 逐帧处理并保存
             for page_num, (img, is_pil_image) in enumerate(images_info):
-                self.status_updated.emit(f"Processing page {page_num + 1} of {file_path}")
-                # 使用 OpenCV 处理图像
-                if is_pil_image:
-                    # 将 PIL 图像转换为 OpenCV 格式
-                    img_array = np.array(img)
-                    if len(img_array.shape) == 2:  # 灰度图
-                        img_cv = cv2.cvtColor(img_array, cv2.COLOR_GRAY2BGR)
-                    elif img_array.shape[2] == 4:  # RGBA
-                        img_cv = cv2.cvtColor(img_array, cv2.COLOR_RGBA2BGR)
-                    elif img_array.shape[2] == 3:  # RGB
-                        img_cv = cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR)
-                    else:
-                        raise ValueError(f"Unsupported image mode: {img.mode}")
-                else:
-                    img_cv = np.array(img)
+                logging.info(f"Processing page {page_num + 1} of {file_path}")
+                # 为 JPG 强制转换为 RGB（去除 Alpha 通道）
+                if self.output_format == "jpg" and img.mode != "RGB":
+                    img = img.convert("RGB")
+                # 为其他格式（如 PNG、WEBP）保留 RGBA，或将非 RGB/RGBA 转换为 RGB
+                elif img.mode not in ("RGB", "RGBA"):
+                    img = img.convert("RGB")
 
-                # 提前检查是否需要模式转换（OpenCV 已经是 BGR，无需额外转换）
                 # 为 ICO 调整尺寸
                 if self.output_format == "ico" and self.ico_size:
                     if not isinstance(self.ico_size, int) or self.ico_size <= 0:
                         raise ValueError(f"Invalid ICO size: {self.ico_size}")
-                    img_cv = cv2.resize(img_cv, (self.ico_size, self.ico_size), interpolation=cv2.INTER_LANCZOS4)
+                    img = img.resize((self.ico_size, self.ico_size), Image.Resampling.LANCZOS)
 
-                # 保存文件，添加页面编号（如果多页）
+                # 保存文件
                 output_filename = output_filename_base
                 if len(images_info) > 1:
                     output_filename += f"_page{page_num + 1}"
                 output_filename += f".{self.output_format}"
                 output_path = os.path.join(output_dir, output_filename)
+                logging.debug(f"Saving to: {output_path}")
 
                 pillow_format = format_mapping.get(self.output_format, self.output_format.upper())
+                save_kwargs = {}
+                if self.output_format == "jpg":
+                    save_kwargs["quality"] = 95
+                elif self.output_format == "webp":
+                    save_kwargs["quality"] = 80  # 默认有损压缩，质量 80
+                    # 可选：支持无损压缩
+                    # save_kwargs["lossless"] = True
+                elif self.output_format == "ico":
+                    save_kwargs["sizes"] = [(self.ico_size, self.ico_size)]
 
-                if self.output_format == "ico":
-                    # 转换回 PIL 格式以保存 ICO
-                    img_pil = Image.fromarray(cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB))
-                    img_pil.save(output_path, format="ICO", sizes=[(self.ico_size, self.ico_size)])
-                else:
-                    # 使用 OpenCV 保存其他格式
-                    if self.output_format == "jpg":
-                        cv2.imwrite(output_path, img_cv, [int(cv2.IMWRITE_JPEG_QUALITY), 95])
-                    else:
-                        cv2.imwrite(output_path, img_cv)
+                img.save(output_path, format=pillow_format, **save_kwargs)
+                logging.info(f"Saved: {output_path}")
 
                 if is_pil_image:
                     img.close()
 
         except Exception as e:
+            logging.error(f"Error processing {file_path}: {str(e)}")
             self.status_updated.emit(f"Error processing {file_path}: {str(e)}")
             raise
 
@@ -144,24 +136,21 @@ class ConverterThread(QThread):
         # 确保输出基础目录存在
         if self.files:
             input_dir = os.path.dirname(self.files[0])
-            output_base_dir = os.path.join(input_dir, "pic")
+            output_base_dir = os.path.abspath(os.path.join(input_dir, "pic"))
+            logging.debug(f"Output base dir: {output_base_dir}")
             if not os.path.exists(output_base_dir):
                 os.makedirs(output_base_dir)
 
-        # 使用线程池并行处理文件
-        max_workers = min(os.cpu_count() or 1, 4)  # 限制最大线程数，避免过多线程
-        with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            future_to_file = {executor.submit(self.process_image, file_path, output_base_dir, format_mapping): file_path for file_path in self.files}
-            for future in as_completed(future_to_file):
-                file_path = future_to_file[future]
-                try:
-                    future.result()  # 抛出异常（如果有）
-                    with self.lock:
-                        processed_files += 1
-                        self.progress_updated.emit(processed_files)
-                except Exception as e:
-                    self.status_updated.emit(f"Error processing {file_path}: {str(e)}")
-                    return
+        # 单线程处理文件
+        for file_path in self.files:
+            try:
+                self.process_image(file_path, output_base_dir, format_mapping)
+                processed_files += 1
+                self.progress_updated.emit(processed_files)
+            except Exception as e:
+                logging.error(f"Error in thread for {file_path}: {str(e)}")
+                self.status_updated.emit(f"Error processing {file_path}: {str(e)}")
+                return
 
         self.status_updated.emit("Conversion completed!")
         self.progress_updated.emit(total_files)
@@ -174,18 +163,15 @@ class OutputFormatDialog(QDialog):
         self.setFixedSize(400, 165)
         layout = QVBoxLayout()
 
-        # 提示标签
         self.label = QLabel(f"You have selected {file_count} file(s). Select output format:")
         layout.addWidget(self.label)
 
-        # 输出格式下拉框
         self.format_combo = QComboBox()
         self.output_formats = ["JPG", "PNG", "WEBP", "BMP", "GIF", "TIFF", "ICO"]
         self.format_combo.addItems(self.output_formats)
         self.format_combo.currentIndexChanged.connect(self.toggle_ico_size)
         layout.addWidget(self.format_combo)
 
-        # ICO 尺寸选择（默认隐藏）
         self.ico_size_label = QLabel("Select ICO size (recommended for icons):")
         self.ico_size_label.setVisible(False)
         layout.addWidget(self.ico_size_label)
@@ -195,7 +181,6 @@ class OutputFormatDialog(QDialog):
         self.ico_size_combo.setVisible(False)
         layout.addWidget(self.ico_size_combo)
 
-        # 按钮
         self.buttons = QDialogButtonBox(
             QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
         )
@@ -227,37 +212,30 @@ class HeicToJpgConverter(QMainWindow):
 
         # 设置窗口图标
         from PyQt6.QtGui import QIcon
-        import os
         icon_path = os.path.join(os.path.dirname(__file__), "Converters.ico")
         self.setWindowIcon(QIcon(icon_path))
 
-        # 主窗口布局
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
         self.layout = QVBoxLayout(self.central_widget)
 
-        # 选择文件按钮
         self.select_button = QPushButton("Select Image Files")
         self.select_button.clicked.connect(self.select_files)
         self.layout.addWidget(self.select_button)
 
-        # 进度条
         self.progress = QProgressBar()
         self.progress.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.layout.addWidget(self.progress)
 
-        # 状态标签
         self.status_label = QLabel("")
         self.status_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.layout.addWidget(self.status_label)
 
-        # 存储选择的文件
         self.selected_files = []
         self.output_format = "jpg"
         self.ico_size = None
         self.converter_thread = None
 
-        # 美化样式
         self.setStyleSheet("""
             QPushButton {
                 padding: 8px;
@@ -283,9 +261,8 @@ class HeicToJpgConverter(QMainWindow):
         """)
 
     def select_files(self):
-        # 支持的输入格式，明确添加 .tif 和 .TIFF
         input_formats = [
-            "Image Files (*.heic *.HEIC *.jpg *.jpeg *.png *.bmp *.gif *.tiff *.TIFF *.tif *.TIF *.webp *.ico *.pcx *.tga)"
+            "Image Files (*.heic *.HEIC *.jpg *.jpeg *.jfif *.JFIF *.png *.bmp *.gif *.tiff *.TIFF *.tif *.TIF *.webp *.ico *.pcx *.tga)"
         ]
         files, _ = QFileDialog.getOpenFileNames(
             self, "Select Image Files", "",
@@ -300,7 +277,6 @@ class HeicToJpgConverter(QMainWindow):
         if file_count == 0:
             return
 
-        # 显示输出格式选择对话框
         dialog = OutputFormatDialog(file_count, self)
         if dialog.exec():
             self.output_format = dialog.get_selected_format()
@@ -315,13 +291,11 @@ class HeicToJpgConverter(QMainWindow):
         if total_files == 0:
             return
 
-        # 重置进度条
         self.progress.setValue(0)
         self.progress.setMaximum(total_files)
         self.select_button.setEnabled(False)
         self.status_label.setText("Converting...")
 
-        # 启动转换线程
         self.converter_thread = ConverterThread(self.selected_files, self.output_format, self.ico_size)
         self.converter_thread.progress_updated.connect(self.update_progress)
         self.converter_thread.status_updated.connect(self.update_status)
@@ -336,7 +310,7 @@ class HeicToJpgConverter(QMainWindow):
 
     def on_conversion_finished(self):
         self.select_button.setEnabled(True)
-        QApplication.instance().beep()  # 提示音
+        QApplication.instance().beep()
         dialog = QDialog(self)
         dialog.setWindowTitle("Done")
         layout = QVBoxLayout()
@@ -345,12 +319,12 @@ class HeicToJpgConverter(QMainWindow):
         button.clicked.connect(dialog.accept)
         layout.addWidget(button)
         dialog.setLayout(layout)
-        dialog.show()  # 使用 show() 而不是 exec()，避免嵌套事件循环
+        dialog.show()
         self.selected_files = []
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setStyle("Fusion")  # 现代 Fusion 风格
+    app.setStyle("Fusion")
     window = HeicToJpgConverter()
     window.show()
     sys.exit(app.exec())
