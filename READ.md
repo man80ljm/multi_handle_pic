@@ -59,11 +59,10 @@ UPX（可选）：压缩可执行文件，减小体积。
 
 打包命令
 确保 heic_to_jpg_converter.py 和 Converters.ico 在同一目录下。
-带 UPX 压缩（推荐）
-pyinstaller --noconfirm --onedir --windowed --icon=Converters.ico --add-data "Converters.ico;." --hidden-import=PyQt6 --hidden-import=PyQt6.QtCore --hidden-import=PyQt6.QtGui --hidden-import=PyQt6.QtWidgets --hidden-import=pillow_heif --hidden-import=PIL --upx-dir D:\upx heic_to_jpg_converter.py
 
-不带 UPX 压缩
-pyinstaller --noconfirm --onedir --windowed --icon=Converters.ico --add-data "Converters.ico;." --hidden-import=PyQt6 --hidden-import=PyQt6.QtCore --hidden-import=PyQt6.QtGui --hidden-import=PyQt6.QtWidgets --hidden-import=pillow_heif --hidden-import=PIL heic_to_jpg_converter.py
+
+pyinstaller --noconfirm --onefile --windowed --icon=Converters.ico --add-data "Converters.ico;." --hidden-import=PyQt6 --hidden-import=PyQt6.QtCore --hidden-import=PyQt6.QtGui --hidden-import=PyQt6.QtWidgets --hidden-import=pillow_heif --hidden-import=PIL heic_to_jpg_converter.py
+
 
 命令选项说明
 
