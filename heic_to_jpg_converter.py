@@ -20,7 +20,15 @@ from PyQt6.QtWidgets import (
     QFileDialog, QProgressBar, QLabel, QDialog, QComboBox, QDialogButtonBox
 )
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
+from PyQt6.QtGui import QIcon  # 确保已导入 QIcon
 import logging
+
+# 定义 resource_path 函数，放在文件开头（类定义之前）
+def resource_path(relative_path):
+    """获取资源文件的绝对路径，兼容 PyInstaller 的 --onefile 模式"""
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.dirname(__file__), relative_path)
 
 # 设置日志
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -211,8 +219,7 @@ class HeicToJpgConverter(QMainWindow):
         self.setFixedSize(400, 100)
 
         # 设置窗口图标
-        from PyQt6.QtGui import QIcon
-        icon_path = os.path.join(os.path.dirname(__file__), "Converters.ico")
+        icon_path = resource_path("Converters.ico")
         self.setWindowIcon(QIcon(icon_path))
 
         self.central_widget = QWidget()
