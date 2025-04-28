@@ -1,3 +1,18 @@
+"""
+Image Format Converter
+
+Dependencies:
+- Python 3.6+
+- PyQt6: GUI framework
+- pillow-heif: For HEIC format support
+- opencv-python: For image processing
+- numpy: Dependency of opencv-python
+- PIL (Pillow): For image handling
+
+Install dependencies:
+pip install PyQt6 pillow-heif opencv-python numpy Pillow -i https://pypi.tuna.tsinghua.edu.cn/simple
+"""
+
 import sys
 import os
 from PIL import Image
