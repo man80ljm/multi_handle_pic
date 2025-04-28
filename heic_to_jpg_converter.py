@@ -20,6 +20,17 @@ class ConverterThread(QThread):
         self.ico_size = ico_size
 
     def run(self):
+        # 格式映射：将用户选择的格式映射到 Pillow 支持的格式
+        format_mapping = {
+            "jpg": "JPEG",
+            "png": "PNG",
+            "webp": "WEBP",
+            "bmp": "BMP",
+            "gif": "GIF",
+            "tiff": "TIFF",
+            "ico": "ICO"
+        }
+
         total_files = len(self.files)
         for i, file_path in enumerate(self.files):
             try:
@@ -33,37 +44,31 @@ class ConverterThread(QThread):
                         "raw",
                     )
                 else:
-                    # 其他格式直接用 Pillow 打开
                     image = Image.open(file_path)
 
-                # 转换为 RGB（某些格式如 ICO 需要）
                 if image.mode not in ("RGB", "RGBA"):
                     image = image.convert("RGB")
 
-                # 为 ICO 调整尺寸
                 if self.output_format == "ico" and self.ico_size:
                     image = image.resize((self.ico_size, self.ico_size), Image.Resampling.LANCZOS)
 
-                # 获取原文件所在目录
                 input_dir = os.path.dirname(file_path)
-                # 创建同级的 pic 文件夹
                 output_dir = os.path.join(input_dir, "pic")
                 if not os.path.exists(output_dir):
                     os.makedirs(output_dir)
-                # 构建输出路径
                 output_filename = os.path.splitext(os.path.basename(file_path))[0] + f".{self.output_format}"
                 output_path = os.path.join(output_dir, output_filename)
-                # 保存文件
-                image.save(output_path, self.output_format.upper(), quality=95 if self.output_format == "jpg" else 100)
-                # 关闭图像对象，释放资源
+
+                # 使用映射后的格式保存文件
+                pillow_format = format_mapping.get(self.output_format, self.output_format.upper())
+                image.save(output_path, pillow_format, quality=95 if self.output_format == "jpg" else 100)
+
                 image.close()
-                # 更新进度
                 self.progress_updated.emit(i + 1)
             except Exception as e:
                 self.status_updated.emit(f"Error: {str(e)}")
                 return
 
-        # 转换完成
         self.status_updated.emit("Conversion completed!")
         self.progress_updated.emit(total_files)
         self.conversion_finished.emit()
