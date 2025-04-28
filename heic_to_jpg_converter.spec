@@ -5,12 +5,12 @@ a = Analysis(
     ['heic_to_jpg_converter.py'],
     pathex=[],
     binaries=[],
-    datas=[],
-    hiddenimports=[],
+    datas=[('Converters.ico', '.')],
+    hiddenimports=['opencv-python', 'numpy', 'pillow_heif', 'PyQt6', 'PyQt6.QtCore', 'PyQt6.QtGui', 'PyQt6.QtWidgets'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
-    excludes=[],
+    excludes=['PyQt6.QtSql', 'PyQt6.QtNetwork', 'PyQt6.QtDBus'],
     noarchive=False,
     optimize=0,
 )
@@ -35,4 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=['Converters.ico'],
 )
