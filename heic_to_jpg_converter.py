@@ -20,7 +20,7 @@ class ConverterThread(QThread):
         self.ico_size = ico_size
 
     def run(self):
-        # 格式映射：将用户选择的格式映射到 Pillow 支持的格式
+        # 格式映射
         format_mapping = {
             "jpg": "JPEG",
             "png": "PNG",
@@ -49,7 +49,13 @@ class ConverterThread(QThread):
                 if image.mode not in ("RGB", "RGBA"):
                     image = image.convert("RGB")
 
+                # 为 ICO 调整尺寸
                 if self.output_format == "ico" and self.ico_size:
+                    # 确保 ico_size 是有效的整数
+                    if not isinstance(self.ico_size, int) or self.ico_size <= 0:
+                        raise ValueError(f"Invalid ICO size: {self.ico_size}")
+                    
+                    # 调整尺寸
                     image = image.resize((self.ico_size, self.ico_size), Image.Resampling.LANCZOS)
 
                 input_dir = os.path.dirname(file_path)
@@ -61,7 +67,15 @@ class ConverterThread(QThread):
 
                 # 使用映射后的格式保存文件
                 pillow_format = format_mapping.get(self.output_format, self.output_format.upper())
-                image.save(output_path, pillow_format, quality=95 if self.output_format == "jpg" else 100)
+
+                # 特殊处理 ICO 格式
+                if self.output_format == "ico":
+                    # Pillow 保存 ICO 时需要确保尺寸正确
+                    # 直接保存为单一尺寸的 ICO 文件
+                    image.save(output_path, format="ICO", sizes=[(self.ico_size, self.ico_size)])
+                else:
+                    # 其他格式按原逻辑保存
+                    image.save(output_path, pillow_format, quality=95 if self.output_format == "jpg" else 100)
 
                 image.close()
                 self.progress_updated.emit(i + 1)
@@ -77,7 +91,7 @@ class OutputFormatDialog(QDialog):
     def __init__(self, file_count, parent=None):
         super().__init__(parent)
         self.setWindowTitle("Select Output Format")
-        self.setFixedSize(400, 100)
+        self.setFixedSize(400, 150)
         layout = QVBoxLayout()
 
         # 提示标签
