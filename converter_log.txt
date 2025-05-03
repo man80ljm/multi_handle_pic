@@ -1,0 +1,406 @@
+2025-05-03 12:13:33,223 - INFO - 日志初始化完成，日志文件：d:\multi_handle_pic\converter_log.txt
+2025-05-03 12:13:33,224 - INFO - 图片格式转换器启动
+2025-05-03 12:13:33,224 - INFO - Python 版本: 3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]
+2025-05-03 12:13:33,224 - INFO - 依赖版本 - Pillow: 11.2.1, PyQt6: 未知, pillow-heif: 0.22.0
+2025-05-03 12:13:37,280 - INFO - 用户未选择任何文件
+2025-05-03 12:14:30,408 - INFO - 用户选择了 24 个文件: ['D:/multi_handle_pic/ceshi/1.test.jpg', 'D:/multi_handle_pic/ceshi/2.test.bmp', 'D:/multi_handle_pic/ceshi/2aahetg.jpg', 'D:/multi_handle_pic/ceshi/3.test.png', 'D:/multi_handle_pic/ceshi/3aq6hszvft7cgr59.jpg', 'D:/multi_handle_pic/ceshi/4.test.ico', 'D:/multi_handle_pic/ceshi/5.test.tif', 'D:/multi_handle_pic/ceshi/6.test.jpg', 'D:/multi_handle_pic/ceshi/7.test.jpg', 'D:/multi_handle_pic/ceshi/7w6jdzavnbmti8c9.jpg', 'D:/multi_handle_pic/ceshi/8.test.jpg', 'D:/multi_handle_pic/ceshi/8l7yfz1sw3kv42c6.jpg', 'D:/multi_handle_pic/ceshi/09b12376b9d84f198441b142.jpg', 'D:/multi_handle_pic/ceshi/9.test.jpg', 'D:/multi_handle_pic/ceshi/9uc17tvr6elxhd08.jpg', 'D:/multi_handle_pic/ceshi/10.test.HEIC', 'D:/multi_handle_pic/ceshi/11.test.gif', 'D:/multi_handle_pic/ceshi/12.test.webp', 'D:/multi_handle_pic/ceshi/13.test.jpg', 'D:/multi_handle_pic/ceshi/14.test.tga', 'D:/multi_handle_pic/ceshi/17aemhspq6lduybz.jpg', 'D:/multi_handle_pic/ceshi/23.jpg', 'D:/multi_handle_pic/ceshi/45.jpg', 'D:/multi_handle_pic/ceshi/61b00f63e383d.jpg']
+2025-05-03 12:14:33,097 - INFO - 用户选择了输出格式: webp, ICO 尺寸: None
+2025-05-03 12:14:33,100 - INFO - 开始转换任务，输入文件数量: 24, 输出格式: webp
+2025-05-03 12:14:33,100 - INFO - 输出基础目录: D:\multi_handle_pic\ceshi\pic
+2025-05-03 12:14:33,101 - INFO - 创建输出目录: D:\multi_handle_pic\ceshi\pic
+2025-05-03 12:14:33,102 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/1.test.jpg
+2025-05-03 12:14:33,102 - INFO - 文件大小: 9.48 MB
+2025-05-03 12:14:33,126 - DEBUG - tag: ImageWidth (256) - type: short (3) - value: b'\x07\x80'
+2025-05-03 12:14:33,127 - DEBUG - tag: ImageLength (257) - type: short (3) - value: b'\x05\x00'
+2025-05-03 12:14:33,127 - DEBUG - tag: BitsPerSample (258) - type: short (3) Tag Location: 46 - Data Location: 158 - value: b'\x00\x08\x00\x08\x00\x08'
+2025-05-03 12:14:33,127 - DEBUG - tag: PhotometricInterpretation (262) - type: short (3) - value: b'\x00\x02'
+2025-05-03 12:14:33,128 - DEBUG - tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+2025-05-03 12:14:33,128 - DEBUG - tag: SamplesPerPixel (277) - type: short (3) - value: b'\x00\x03'
+2025-05-03 12:14:33,129 - DEBUG - tag: XResolution (282) - type: rational (5) Tag Location: 94 - Data Location: 164 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+2025-05-03 12:14:33,129 - DEBUG - tag: YResolution (283) - type: rational (5) Tag Location: 106 - Data Location: 172 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+2025-05-03 12:14:33,130 - DEBUG - tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+2025-05-03 12:14:33,130 - DEBUG - tag: Software (305) - type: string (2) Tag Location: 130 - Data Location: 180 - value: b'Adobe Photoshop 22.0 (Windows)\x00'
+2025-05-03 12:14:33,131 - DEBUG - tag: DateTime (306) - type: string (2) Tag Location: 142 - Data Location: 211 - value: b'2021:12:17 09:47:53\x00'
+2025-05-03 12:14:33,131 - DEBUG - tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xe8'
+2025-05-03 12:14:33,131 - INFO - 图片格式: JPEG, 尺寸: (8000, 5334), 模式: RGB
+2025-05-03 12:14:33,359 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/1.test.jpg
+2025-05-03 12:14:33,359 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/1.test.jpg
+2025-05-03 12:14:33,359 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\1.test.webp
+2025-05-03 12:14:33,360 - DEBUG - Importing AvifImagePlugin
+2025-05-03 12:14:33,363 - DEBUG - Importing BlpImagePlugin
+2025-05-03 12:14:33,366 - DEBUG - Importing BmpImagePlugin
+2025-05-03 12:14:33,367 - DEBUG - Importing BufrStubImagePlugin
+2025-05-03 12:14:33,369 - DEBUG - Importing CurImagePlugin
+2025-05-03 12:14:33,371 - DEBUG - Importing DcxImagePlugin
+2025-05-03 12:14:33,376 - DEBUG - Importing DdsImagePlugin
+2025-05-03 12:14:33,380 - DEBUG - Importing EpsImagePlugin
+2025-05-03 12:14:33,381 - DEBUG - Importing FitsImagePlugin
+2025-05-03 12:14:33,383 - DEBUG - Importing FliImagePlugin
+2025-05-03 12:14:33,384 - DEBUG - Importing FpxImagePlugin
+2025-05-03 12:14:33,386 - DEBUG - Image: failed to import FpxImagePlugin: No module named 'olefile'
+2025-05-03 12:14:33,387 - DEBUG - Importing FtexImagePlugin
+2025-05-03 12:14:33,390 - DEBUG - Importing GbrImagePlugin
+2025-05-03 12:14:33,392 - DEBUG - Importing GifImagePlugin
+2025-05-03 12:14:33,392 - DEBUG - Importing GribStubImagePlugin
+2025-05-03 12:14:33,393 - DEBUG - Importing Hdf5StubImagePlugin
+2025-05-03 12:14:33,394 - DEBUG - Importing IcnsImagePlugin
+2025-05-03 12:14:33,396 - DEBUG - Importing IcoImagePlugin
+2025-05-03 12:14:33,397 - DEBUG - Importing ImImagePlugin
+2025-05-03 12:14:33,398 - DEBUG - Importing ImtImagePlugin
+2025-05-03 12:14:33,398 - DEBUG - Importing IptcImagePlugin
+2025-05-03 12:14:33,399 - DEBUG - Importing JpegImagePlugin
+2025-05-03 12:14:33,399 - DEBUG - Importing Jpeg2KImagePlugin
+2025-05-03 12:14:33,400 - DEBUG - Importing McIdasImagePlugin
+2025-05-03 12:14:33,400 - DEBUG - Importing MicImagePlugin
+2025-05-03 12:14:33,401 - DEBUG - Image: failed to import MicImagePlugin: No module named 'olefile'
+2025-05-03 12:14:33,402 - DEBUG - Importing MpegImagePlugin
+2025-05-03 12:14:33,403 - DEBUG - Importing MpoImagePlugin
+2025-05-03 12:14:33,403 - DEBUG - Importing MspImagePlugin
+2025-05-03 12:14:33,404 - DEBUG - Importing PalmImagePlugin
+2025-05-03 12:14:33,407 - DEBUG - Importing PcdImagePlugin
+2025-05-03 12:14:33,408 - DEBUG - Importing PcxImagePlugin
+2025-05-03 12:14:33,409 - DEBUG - Importing PdfImagePlugin
+2025-05-03 12:14:33,414 - DEBUG - Importing PixarImagePlugin
+2025-05-03 12:14:33,415 - DEBUG - Importing PngImagePlugin
+2025-05-03 12:14:33,415 - DEBUG - Importing PpmImagePlugin
+2025-05-03 12:14:33,415 - DEBUG - Importing PsdImagePlugin
+2025-05-03 12:14:33,416 - DEBUG - Importing QoiImagePlugin
+2025-05-03 12:14:33,417 - DEBUG - Importing SgiImagePlugin
+2025-05-03 12:14:33,417 - DEBUG - Importing SpiderImagePlugin
+2025-05-03 12:14:33,418 - DEBUG - Importing SunImagePlugin
+2025-05-03 12:14:33,419 - DEBUG - Importing TgaImagePlugin
+2025-05-03 12:14:33,420 - DEBUG - Importing TiffImagePlugin
+2025-05-03 12:14:33,420 - DEBUG - Importing WebPImagePlugin
+2025-05-03 12:14:33,423 - DEBUG - Importing WmfImagePlugin
+2025-05-03 12:14:33,425 - DEBUG - Importing XbmImagePlugin
+2025-05-03 12:14:33,426 - DEBUG - Importing XpmImagePlugin
+2025-05-03 12:14:33,427 - DEBUG - Importing XVThumbImagePlugin
+2025-05-03 12:14:38,266 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\1.test.webp
+2025-05-03 12:14:38,320 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/2.test.bmp
+2025-05-03 12:14:38,322 - INFO - 文件大小: 42.19 MB
+2025-05-03 12:14:38,322 - INFO - 图片格式: BMP, 尺寸: (5120, 2880), 模式: RGB
+2025-05-03 12:14:38,443 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/2.test.bmp
+2025-05-03 12:14:38,443 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/2.test.bmp
+2025-05-03 12:14:38,443 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\2.test.webp
+2025-05-03 12:14:43,457 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\2.test.webp
+2025-05-03 12:14:43,469 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/2aahetg.jpg
+2025-05-03 12:14:43,470 - INFO - 文件大小: 9.48 MB
+2025-05-03 12:14:43,471 - DEBUG - tag: ImageWidth (256) - type: short (3) - value: b'\x07\x80'
+2025-05-03 12:14:43,471 - DEBUG - tag: ImageLength (257) - type: short (3) - value: b'\x05\x00'
+2025-05-03 12:14:43,471 - DEBUG - tag: BitsPerSample (258) - type: short (3) Tag Location: 46 - Data Location: 158 - value: b'\x00\x08\x00\x08\x00\x08'
+2025-05-03 12:14:43,471 - DEBUG - tag: PhotometricInterpretation (262) - type: short (3) - value: b'\x00\x02'
+2025-05-03 12:14:43,472 - DEBUG - tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+2025-05-03 12:14:43,472 - DEBUG - tag: SamplesPerPixel (277) - type: short (3) - value: b'\x00\x03'
+2025-05-03 12:14:43,472 - DEBUG - tag: XResolution (282) - type: rational (5) Tag Location: 94 - Data Location: 164 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+2025-05-03 12:14:43,472 - DEBUG - tag: YResolution (283) - type: rational (5) Tag Location: 106 - Data Location: 172 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+2025-05-03 12:14:43,473 - DEBUG - tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+2025-05-03 12:14:43,473 - DEBUG - tag: Software (305) - type: string (2) Tag Location: 130 - Data Location: 180 - value: b'Adobe Photoshop 22.0 (Windows)\x00'
+2025-05-03 12:14:43,473 - DEBUG - tag: DateTime (306) - type: string (2) Tag Location: 142 - Data Location: 211 - value: b'2021:12:17 09:47:53\x00'
+2025-05-03 12:14:43,473 - DEBUG - tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xe8'
+2025-05-03 12:14:43,474 - INFO - 图片格式: JPEG, 尺寸: (8000, 5334), 模式: RGB
+2025-05-03 12:14:43,742 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/2aahetg.jpg
+2025-05-03 12:14:43,742 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/2aahetg.jpg
+2025-05-03 12:14:43,742 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\2aahetg.webp
+2025-05-03 12:14:49,756 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\2aahetg.webp
+2025-05-03 12:14:49,791 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/3.test.png
+2025-05-03 12:14:49,792 - INFO - 文件大小: 0.84 MB
+2025-05-03 12:14:49,793 - DEBUG - STREAM b'IHDR' 16 13
+2025-05-03 12:14:49,793 - DEBUG - STREAM b'sRGB' 41 1
+2025-05-03 12:14:49,793 - DEBUG - STREAM b'gAMA' 54 4
+2025-05-03 12:14:49,794 - DEBUG - STREAM b'IDAT' 70 65466
+2025-05-03 12:14:49,794 - INFO - 图片格式: PNG, 尺寸: (1859, 1115), 模式: RGB
+2025-05-03 12:14:49,808 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/3.test.png
+2025-05-03 12:14:49,808 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/3.test.png
+2025-05-03 12:14:49,808 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\3.test.webp
+2025-05-03 12:14:50,022 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\3.test.webp
+2025-05-03 12:14:50,024 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/3aq6hszvft7cgr59.jpg
+2025-05-03 12:14:50,025 - INFO - 文件大小: 3.10 MB
+2025-05-03 12:14:50,025 - INFO - 图片格式: JPEG, 尺寸: (5120, 2880), 模式: RGB
+2025-05-03 12:14:50,097 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/3aq6hszvft7cgr59.jpg
+2025-05-03 12:14:50,098 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/3aq6hszvft7cgr59.jpg
+2025-05-03 12:14:50,098 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\3aq6hszvft7cgr59.webp
+2025-05-03 12:14:52,404 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\3aq6hszvft7cgr59.webp
+2025-05-03 12:14:52,414 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/4.test.ico
+2025-05-03 12:14:52,415 - INFO - 文件大小: 0.26 MB
+2025-05-03 12:14:52,416 - INFO - 图片格式: ICO, 尺寸: (256, 256), 模式: RGBA
+2025-05-03 12:14:52,416 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/4.test.ico
+2025-05-03 12:14:52,417 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/4.test.ico
+2025-05-03 12:14:52,417 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\4.test.webp
+2025-05-03 12:14:52,430 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\4.test.webp
+2025-05-03 12:14:52,431 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/5.test.tif
+2025-05-03 12:14:52,432 - INFO - 文件大小: 12.49 MB
+2025-05-03 12:14:52,432 - DEBUG - *** TiffImageFile._open ***
+2025-05-03 12:14:52,433 - DEBUG - - __first: 8
+2025-05-03 12:14:52,433 - DEBUG - - ifh: b'II*\x00\x08\x00\x00\x00'
+2025-05-03 12:14:52,433 - DEBUG - Seeking to frame 0, on frame -1, __next 8, location: 8
+2025-05-03 12:14:52,434 - DEBUG - Loading tags, location: 8
+2025-05-03 12:14:52,434 - DEBUG - tag: NewSubfileType (254) - type: long (4) - value: b'\x00\x00\x00\x00'
+2025-05-03 12:14:52,435 - DEBUG - tag: ImageWidth (256) - type: short (3) - value: b'\x80\x07'
+2025-05-03 12:14:52,435 - DEBUG - tag: ImageLength (257) - type: short (3) - value: b'8\x04'
+2025-05-03 12:14:52,435 - DEBUG - tag: BitsPerSample (258) - type: short (3) Tag Location: 58 - Data Location: 302 - value: b'\x08\x00\x08\x00\x08\x00'
+2025-05-03 12:14:52,436 - DEBUG - tag: Compression (259) - type: short (3) - value: b'\x01\x00'
+2025-05-03 12:14:52,436 - DEBUG - tag: PhotometricInterpretation (262) - type: short (3) - value: b'\x02\x00'
+2025-05-03 12:14:52,436 - DEBUG - tag: StripOffsets (273) - type: long (4) - value: b'\xc6n\x00\x00'
+2025-05-03 12:14:52,437 - DEBUG - tag: Orientation (274) - type: short (3) - value: b'\x01\x00'
+2025-05-03 12:14:52,437 - DEBUG - tag: SamplesPerPixel (277) - type: short (3) - value: b'\x03\x00'
+2025-05-03 12:14:52,438 - DEBUG - tag: RowsPerStrip (278) - type: short (3) - value: b'8\x04'
+2025-05-03 12:14:52,438 - DEBUG - tag: StripByteCounts (279) - type: long (4) - value: b'\x00\xec^\x00'
+2025-05-03 12:14:52,439 - DEBUG - tag: XResolution (282) - type: rational (5) Tag Location: 154 - Data Location: 308 - value: b"\xc0\xc6-\x00\x10'\x00\x00"
+2025-05-03 12:14:52,439 - DEBUG - tag: YResolution (283) - type: rational (5) Tag Location: 166 - Data Location: 316 - value: b"\xc0\xc6-\x00\x10'\x00\x00"
+2025-05-03 12:14:52,440 - DEBUG - tag: PlanarConfiguration (284) - type: short (3) - value: b'\x01\x00'
+2025-05-03 12:14:52,440 - DEBUG - tag: ResolutionUnit (296) - type: short (3) - value: b'\x02\x00'
+2025-05-03 12:14:52,441 - DEBUG - tag: Software (305) - type: string (2) Tag Location: 202 - Data Location: 324 - value: b'Adobe Photoshop 21.0 (Windows)\x00'
+2025-05-03 12:14:52,441 - DEBUG - tag: DateTime (306) - type: string (2) Tag Location: 214 - Data Location: 356 - value: b'2025:04:27 20:03:27\x00'
+2025-05-03 12:14:52,442 - DEBUG - tag: Artist (315) - type: string (2) Tag Location: 226 - Data Location: 376 - value: b'8wallpapers.com\x00'
+2025-05-03 12:14:52,442 - DEBUG - tag: XMP (700) - type: byte (1) Tag Location: 238 - Data Location: 392 - value: <table: 16433 bytes>
+2025-05-03 12:14:52,442 - DEBUG - tag: IptcNaaInfo (33723) - type: undefined (7) Tag Location: 250 - Data Location: 16826 - value: <table: 51 bytes>
+2025-05-03 12:14:52,443 - DEBUG - tag: PhotoshopInfo (34377) - type: byte (1) Tag Location: 262 - Data Location: 16878 - value: <table: 8336 bytes>
+2025-05-03 12:14:52,443 - DEBUG - tag: ExifIFD (34665) - type: long (4) - value: b'\xc8Z_\x00'
+2025-05-03 12:14:52,443 - DEBUG - tag: ICCProfile (34675) - type: undefined (7) Tag Location: 286 - Data Location: 25214 - value: <table: 3144 bytes>
+2025-05-03 12:14:52,449 - DEBUG - tag: ImageSourceData (37724) - type: undefined (7) Tag Location: 298 - Data Location: 6249248 - value: <table: 6842660 bytes>
+2025-05-03 12:14:52,450 - DEBUG - tag: NewSubfileType (254) - type: long (4) - value: b'\x00\x00\x00\x00'
+2025-05-03 12:14:52,451 - DEBUG - tag: ImageWidth (256) - type: short (3) - value: b'\x80\x07'
+2025-05-03 12:14:52,451 - DEBUG - tag: ImageLength (257) - type: short (3) - value: b'8\x04'
+2025-05-03 12:14:52,452 - DEBUG - tag: BitsPerSample (258) - type: short (3) Tag Location: 58 - Data Location: 302 - value: b'\x08\x00\x08\x00\x08\x00'
+2025-05-03 12:14:52,452 - DEBUG - tag: Compression (259) - type: short (3) - value: b'\x01\x00'
+2025-05-03 12:14:52,453 - DEBUG - tag: PhotometricInterpretation (262) - type: short (3) - value: b'\x02\x00'
+2025-05-03 12:14:52,453 - DEBUG - tag: StripOffsets (273) - type: long (4) - value: b'\xc6n\x00\x00'
+2025-05-03 12:14:52,454 - DEBUG - tag: Orientation (274) - type: short (3) - value: b'\x01\x00'
+2025-05-03 12:14:52,454 - DEBUG - tag: SamplesPerPixel (277) - type: short (3) - value: b'\x03\x00'
+2025-05-03 12:14:52,454 - DEBUG - tag: RowsPerStrip (278) - type: short (3) - value: b'8\x04'
+2025-05-03 12:14:52,455 - DEBUG - tag: StripByteCounts (279) - type: long (4) - value: b'\x00\xec^\x00'
+2025-05-03 12:14:52,456 - DEBUG - tag: XResolution (282) - type: rational (5) Tag Location: 154 - Data Location: 308 - value: b"\xc0\xc6-\x00\x10'\x00\x00"
+2025-05-03 12:14:52,457 - DEBUG - tag: YResolution (283) - type: rational (5) Tag Location: 166 - Data Location: 316 - value: b"\xc0\xc6-\x00\x10'\x00\x00"
+2025-05-03 12:14:52,457 - DEBUG - tag: PlanarConfiguration (284) - type: short (3) - value: b'\x01\x00'
+2025-05-03 12:14:52,458 - DEBUG - tag: ResolutionUnit (296) - type: short (3) - value: b'\x02\x00'
+2025-05-03 12:14:52,458 - DEBUG - tag: Software (305) - type: string (2) Tag Location: 202 - Data Location: 324 - value: b'Adobe Photoshop 21.0 (Windows)\x00'
+2025-05-03 12:14:52,459 - DEBUG - tag: DateTime (306) - type: string (2) Tag Location: 214 - Data Location: 356 - value: b'2025:04:27 20:03:27\x00'
+2025-05-03 12:14:52,460 - DEBUG - tag: Artist (315) - type: string (2) Tag Location: 226 - Data Location: 376 - value: b'8wallpapers.com\x00'
+2025-05-03 12:14:52,460 - DEBUG - tag: XMP (700) - type: byte (1) Tag Location: 238 - Data Location: 392 - value: <table: 16433 bytes>
+2025-05-03 12:14:52,460 - DEBUG - tag: IptcNaaInfo (33723) - type: undefined (7) Tag Location: 250 - Data Location: 16826 - value: <table: 51 bytes>
+2025-05-03 12:14:52,461 - DEBUG - tag: PhotoshopInfo (34377) - type: byte (1) Tag Location: 262 - Data Location: 16878 - value: <table: 8336 bytes>
+2025-05-03 12:14:52,461 - DEBUG - tag: ExifIFD (34665) - type: long (4) - value: b'\xc8Z_\x00'
+2025-05-03 12:14:52,462 - DEBUG - tag: ICCProfile (34675) - type: undefined (7) Tag Location: 286 - Data Location: 25214 - value: <table: 3144 bytes>
+2025-05-03 12:14:52,467 - DEBUG - tag: ImageSourceData (37724) - type: undefined (7) Tag Location: 298 - Data Location: 6249248 - value: <table: 6842660 bytes>
+2025-05-03 12:14:52,467 - DEBUG - *** Summary ***
+2025-05-03 12:14:52,468 - DEBUG - - compression: raw
+2025-05-03 12:14:52,468 - DEBUG - - photometric_interpretation: 2
+2025-05-03 12:14:52,468 - DEBUG - - planar_configuration: 1
+2025-05-03 12:14:52,469 - DEBUG - - fill_order: 1
+2025-05-03 12:14:52,469 - DEBUG - - YCbCr subsampling: None
+2025-05-03 12:14:52,470 - DEBUG - - size: (1920, 1080)
+2025-05-03 12:14:52,471 - DEBUG - format key: (b'II', 2, (1,), 1, (8, 8, 8), ())
+2025-05-03 12:14:52,471 - DEBUG - - raw mode: RGB
+2025-05-03 12:14:52,472 - DEBUG - - pil mode: RGB
+2025-05-03 12:14:52,472 - INFO - 图片格式: TIFF, 尺寸: (1920, 1080), 模式: RGB
+2025-05-03 12:14:52,477 - DEBUG - tag: NewSubfileType (254) - type: long (4) - value: b'\x00\x00\x00\x00'
+2025-05-03 12:14:52,477 - DEBUG - tag: ImageWidth (256) - type: short (3) - value: b'\x80\x07'
+2025-05-03 12:14:52,478 - DEBUG - tag: ImageLength (257) - type: short (3) - value: b'8\x04'
+2025-05-03 12:14:52,478 - DEBUG - tag: BitsPerSample (258) - type: short (3) Tag Location: 58 - Data Location: 302 - value: b'\x08\x00\x08\x00\x08\x00'
+2025-05-03 12:14:52,478 - DEBUG - tag: Compression (259) - type: short (3) - value: b'\x01\x00'
+2025-05-03 12:14:52,479 - DEBUG - tag: PhotometricInterpretation (262) - type: short (3) - value: b'\x02\x00'
+2025-05-03 12:14:52,479 - DEBUG - tag: StripOffsets (273) - type: long (4) - value: b'\xc6n\x00\x00'
+2025-05-03 12:14:52,479 - DEBUG - tag: Orientation (274) - type: short (3) - value: b'\x01\x00'
+2025-05-03 12:14:52,480 - DEBUG - tag: SamplesPerPixel (277) - type: short (3) - value: b'\x03\x00'
+2025-05-03 12:14:52,480 - DEBUG - tag: RowsPerStrip (278) - type: short (3) - value: b'8\x04'
+2025-05-03 12:14:52,480 - DEBUG - tag: StripByteCounts (279) - type: long (4) - value: b'\x00\xec^\x00'
+2025-05-03 12:14:52,481 - DEBUG - tag: XResolution (282) - type: rational (5) Tag Location: 154 - Data Location: 308 - value: b"\xc0\xc6-\x00\x10'\x00\x00"
+2025-05-03 12:14:52,481 - DEBUG - tag: YResolution (283) - type: rational (5) Tag Location: 166 - Data Location: 316 - value: b"\xc0\xc6-\x00\x10'\x00\x00"
+2025-05-03 12:14:52,482 - DEBUG - tag: PlanarConfiguration (284) - type: short (3) - value: b'\x01\x00'
+2025-05-03 12:14:52,482 - DEBUG - tag: ResolutionUnit (296) - type: short (3) - value: b'\x02\x00'
+2025-05-03 12:14:52,482 - DEBUG - tag: Software (305) - type: string (2) Tag Location: 202 - Data Location: 324 - value: b'Adobe Photoshop 21.0 (Windows)\x00'
+2025-05-03 12:14:52,483 - DEBUG - tag: DateTime (306) - type: string (2) Tag Location: 214 - Data Location: 356 - value: b'2025:04:27 20:03:27\x00'
+2025-05-03 12:14:52,483 - DEBUG - tag: Artist (315) - type: string (2) Tag Location: 226 - Data Location: 376 - value: b'8wallpapers.com\x00'
+2025-05-03 12:14:52,483 - DEBUG - tag: XMP (700) - type: byte (1) Tag Location: 238 - Data Location: 392 - value: <table: 16433 bytes>
+2025-05-03 12:14:52,484 - DEBUG - tag: IptcNaaInfo (33723) - type: undefined (7) Tag Location: 250 - Data Location: 16826 - value: <table: 51 bytes>
+2025-05-03 12:14:52,484 - DEBUG - tag: PhotoshopInfo (34377) - type: byte (1) Tag Location: 262 - Data Location: 16878 - value: <table: 8336 bytes>
+2025-05-03 12:14:52,485 - DEBUG - tag: ExifIFD (34665) - type: long (4) - value: b'\xc8Z_\x00'
+2025-05-03 12:14:52,485 - DEBUG - tag: ICCProfile (34675) - type: undefined (7) Tag Location: 286 - Data Location: 25214 - value: <table: 3144 bytes>
+2025-05-03 12:14:52,493 - DEBUG - tag: ImageSourceData (37724) - type: undefined (7) Tag Location: 298 - Data Location: 6249248 - value: <table: 6842660 bytes>
+2025-05-03 12:14:52,493 - DEBUG - tag: ExifVersion (36864) - type: undefined (7) - value: b'0231'
+2025-05-03 12:14:52,494 - DEBUG - tag: DateTimeOriginal (36867) - type: string (2) Tag Location: 6249186 - Data Location: 6249226 - value: b'2021:04:20 08:22:52\x00'
+2025-05-03 12:14:52,494 - DEBUG - tag: ColorSpace (40961) - type: short (3) - value: b'\x01\x00'
+2025-05-03 12:14:52,495 - DEBUG - tag: PixelXDimension (40962) - type: long (4) - value: b'\x80\x07\x00\x00'
+2025-05-03 12:14:52,495 - DEBUG - tag: PixelYDimension (40963) - type: long (4) - value: b'8\x04\x00\x00'
+2025-05-03 12:14:52,497 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/5.test.tif
+2025-05-03 12:14:52,498 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/5.test.tif
+2025-05-03 12:14:52,498 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\5.test.webp
+2025-05-03 12:14:52,852 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\5.test.webp
+2025-05-03 12:14:52,856 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/6.test.jpg
+2025-05-03 12:14:52,857 - INFO - 文件大小: 4.77 MB
+2025-05-03 12:14:52,858 - INFO - 图片格式: JPEG, 尺寸: (5200, 3470), 模式: RGB
+2025-05-03 12:14:52,954 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/6.test.jpg
+2025-05-03 12:14:52,954 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/6.test.jpg
+2025-05-03 12:14:52,955 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\6.test.webp
+2025-05-03 12:14:54,925 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\6.test.webp
+2025-05-03 12:14:54,939 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/7.test.jpg
+2025-05-03 12:14:54,940 - INFO - 文件大小: 2.90 MB
+2025-05-03 12:14:54,941 - DEBUG - tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+2025-05-03 12:14:54,941 - DEBUG - tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 86 - value: b'\x00\x00\x00H\x00\x00\x00\x01'
+2025-05-03 12:14:54,941 - DEBUG - tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 94 - value: b'\x00\x00\x00H\x00\x00\x00\x01'
+2025-05-03 12:14:54,942 - DEBUG - tag: Software (305) - type: string (2) Tag Location: 58 - Data Location: 102 - value: b'Photos 1.1\x00'
+2025-05-03 12:14:54,942 - DEBUG - tag: DateTime (306) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'2014:11:05 22:56:42\x00'
+2025-05-03 12:14:54,942 - DEBUG - tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\x86'
+2025-05-03 12:14:54,943 - INFO - 图片格式: JPEG, 尺寸: (5120, 2880), 模式: RGB
+2025-05-03 12:14:55,036 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/7.test.jpg
+2025-05-03 12:14:55,036 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/7.test.jpg
+2025-05-03 12:14:55,036 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\7.test.webp
+2025-05-03 12:14:57,257 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\7.test.webp
+2025-05-03 12:14:57,266 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/7w6jdzavnbmti8c9.jpg
+2025-05-03 12:14:57,267 - INFO - 文件大小: 1.52 MB
+2025-05-03 12:14:57,268 - INFO - 图片格式: JPEG, 尺寸: (5213, 3126), 模式: RGB
+2025-05-03 12:14:57,341 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/7w6jdzavnbmti8c9.jpg
+2025-05-03 12:14:57,341 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/7w6jdzavnbmti8c9.jpg
+2025-05-03 12:14:57,341 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\7w6jdzavnbmti8c9.webp
+2025-05-03 12:14:58,984 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\7w6jdzavnbmti8c9.webp
+2025-05-03 12:14:58,997 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/8.test.jpg
+2025-05-03 12:14:58,998 - INFO - 文件大小: 0.57 MB
+2025-05-03 12:14:58,998 - INFO - 图片格式: JPEG, 尺寸: (2250, 1500), 模式: RGB
+2025-05-03 12:14:59,028 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/8.test.jpg
+2025-05-03 12:14:59,028 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/8.test.jpg
+2025-05-03 12:14:59,029 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\8.test.webp
+2025-05-03 12:14:59,522 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\8.test.webp
+2025-05-03 12:14:59,526 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/8l7yfz1sw3kv42c6.jpg
+2025-05-03 12:14:59,527 - INFO - 文件大小: 5.81 MB
+2025-05-03 12:14:59,528 - INFO - 图片格式: JPEG, 尺寸: (5570, 3713), 模式: RGB
+2025-05-03 12:14:59,804 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/8l7yfz1sw3kv42c6.jpg
+2025-05-03 12:14:59,805 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/8l7yfz1sw3kv42c6.jpg
+2025-05-03 12:14:59,805 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\8l7yfz1sw3kv42c6.webp
+2025-05-03 12:15:02,982 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\8l7yfz1sw3kv42c6.webp
+2025-05-03 12:15:02,996 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/09b12376b9d84f198441b142.jpg
+2025-05-03 12:15:02,998 - INFO - 文件大小: 1.95 MB
+2025-05-03 12:15:02,999 - DEBUG - tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+2025-05-03 12:15:02,999 - DEBUG - tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 110 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+2025-05-03 12:15:03,000 - DEBUG - tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 118 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+2025-05-03 12:15:03,000 - DEBUG - tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+2025-05-03 12:15:03,000 - DEBUG - tag: Software (305) - type: string (2) Tag Location: 70 - Data Location: 126 - value: b'Adobe Photoshop CS5 Windows\x00'
+2025-05-03 12:15:03,001 - DEBUG - tag: DateTime (306) - type: string (2) Tag Location: 82 - Data Location: 154 - value: b'2020:04:13 22:52:03\x00'
+2025-05-03 12:15:03,001 - DEBUG - tag: Artist (315) - type: string (2) Tag Location: 94 - Data Location: 174 - value: b'8wallpapers.com\x00'
+2025-05-03 12:15:03,001 - DEBUG - tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xbe'
+2025-05-03 12:15:03,002 - INFO - 图片格式: JPEG, 尺寸: (1920, 1080), 模式: RGB
+2025-05-03 12:15:03,037 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/09b12376b9d84f198441b142.jpg
+2025-05-03 12:15:03,038 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/09b12376b9d84f198441b142.jpg
+2025-05-03 12:15:03,038 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\09b12376b9d84f198441b142.webp
+2025-05-03 12:15:03,440 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\09b12376b9d84f198441b142.webp
+2025-05-03 12:15:03,442 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/9.test.jpg
+2025-05-03 12:15:03,443 - INFO - 文件大小: 3.36 MB
+2025-05-03 12:15:03,444 - INFO - 图片格式: JPEG, 尺寸: (3000, 2000), 模式: RGB
+2025-05-03 12:15:03,502 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/9.test.jpg
+2025-05-03 12:15:03,502 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/9.test.jpg
+2025-05-03 12:15:03,503 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\9.test.webp
+2025-05-03 12:15:04,407 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\9.test.webp
+2025-05-03 12:15:04,412 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/9uc17tvr6elxhd08.jpg
+2025-05-03 12:15:04,413 - INFO - 文件大小: 4.77 MB
+2025-05-03 12:15:04,414 - INFO - 图片格式: JPEG, 尺寸: (5200, 3470), 模式: RGB
+2025-05-03 12:15:04,536 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/9uc17tvr6elxhd08.jpg
+2025-05-03 12:15:04,537 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/9uc17tvr6elxhd08.jpg
+2025-05-03 12:15:04,537 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\9uc17tvr6elxhd08.webp
+2025-05-03 12:15:06,784 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\9uc17tvr6elxhd08.webp
+2025-05-03 12:15:06,798 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/10.test.HEIC
+2025-05-03 12:15:06,800 - INFO - 文件大小: 1.77 MB
+2025-05-03 12:15:06,800 - DEBUG - 处理 HEIC 文件: D:/multi_handle_pic/ceshi/10.test.HEIC
+2025-05-03 12:15:07,035 - INFO - HEIC 图片尺寸: (4032, 3024), 模式: RGB
+2025-05-03 12:15:07,036 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/10.test.HEIC
+2025-05-03 12:15:07,036 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\10.test.webp
+2025-05-03 12:15:13,566 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\10.test.webp
+2025-05-03 12:15:13,579 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:13,581 - INFO - 文件大小: 0.46 MB
+2025-05-03 12:15:13,582 - INFO - 图片格式: GIF, 尺寸: (500, 281), 模式: P
+2025-05-03 12:15:13,649 - INFO - 提取到 13 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:13,656 - INFO - 创建子文件夹: D:\multi_handle_pic\ceshi\pic\11.test
+2025-05-03 12:15:13,657 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:13,658 - DEBUG - 转换为 RGB 模式
+2025-05-03 12:15:13,658 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page1.webp
+2025-05-03 12:15:13,750 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page1.webp
+2025-05-03 12:15:13,751 - INFO - 处理第 2 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:13,751 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page2.webp
+2025-05-03 12:15:13,839 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page2.webp
+2025-05-03 12:15:13,840 - INFO - 处理第 3 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:13,841 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page3.webp
+2025-05-03 12:15:13,937 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page3.webp
+2025-05-03 12:15:13,938 - INFO - 处理第 4 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:13,938 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page4.webp
+2025-05-03 12:15:14,016 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page4.webp
+2025-05-03 12:15:14,016 - INFO - 处理第 5 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:14,017 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page5.webp
+2025-05-03 12:15:14,106 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page5.webp
+2025-05-03 12:15:14,106 - INFO - 处理第 6 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:14,107 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page6.webp
+2025-05-03 12:15:14,213 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page6.webp
+2025-05-03 12:15:14,214 - INFO - 处理第 7 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:14,215 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page7.webp
+2025-05-03 12:15:14,301 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page7.webp
+2025-05-03 12:15:14,302 - INFO - 处理第 8 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:14,302 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page8.webp
+2025-05-03 12:15:14,401 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page8.webp
+2025-05-03 12:15:14,401 - INFO - 处理第 9 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:14,402 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page9.webp
+2025-05-03 12:15:14,484 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page9.webp
+2025-05-03 12:15:14,485 - INFO - 处理第 10 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:14,485 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page10.webp
+2025-05-03 12:15:14,558 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page10.webp
+2025-05-03 12:15:14,559 - INFO - 处理第 11 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:14,559 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page11.webp
+2025-05-03 12:15:14,641 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page11.webp
+2025-05-03 12:15:14,642 - INFO - 处理第 12 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:14,642 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page12.webp
+2025-05-03 12:15:14,705 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page12.webp
+2025-05-03 12:15:14,706 - INFO - 处理第 13 帧: D:/multi_handle_pic/ceshi/11.test.gif
+2025-05-03 12:15:14,706 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page13.webp
+2025-05-03 12:15:14,781 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\11.test\11.test_page13.webp
+2025-05-03 12:15:14,782 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/12.test.webp
+2025-05-03 12:15:14,784 - INFO - 文件大小: 0.01 MB
+2025-05-03 12:15:14,784 - INFO - 图片格式: WEBP, 尺寸: (500, 750), 模式: RGB
+2025-05-03 12:15:14,799 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/12.test.webp
+2025-05-03 12:15:14,800 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/12.test.webp
+2025-05-03 12:15:14,800 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\12.test.webp
+2025-05-03 12:15:14,933 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\12.test.webp
+2025-05-03 12:15:14,935 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/13.test.jpg
+2025-05-03 12:15:14,936 - INFO - 文件大小: 1.01 MB
+2025-05-03 12:15:14,937 - INFO - 图片格式: JPEG, 尺寸: (2844, 1600), 模式: RGB
+2025-05-03 12:15:14,998 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/13.test.jpg
+2025-05-03 12:15:14,998 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/13.test.jpg
+2025-05-03 12:15:14,999 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\13.test.webp
+2025-05-03 12:15:17,041 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\13.test.webp
+2025-05-03 12:15:17,047 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/14.test.tga
+2025-05-03 12:15:17,049 - INFO - 文件大小: 17.36 MB
+2025-05-03 12:15:17,067 - INFO - 图片格式: TGA, 尺寸: (2844, 1600), 模式: RGBA
+2025-05-03 12:15:17,122 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/14.test.tga
+2025-05-03 12:15:17,122 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/14.test.tga
+2025-05-03 12:15:17,123 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\14.test.webp
+2025-05-03 12:15:19,053 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\14.test.webp
+2025-05-03 12:15:19,059 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/17aemhspq6lduybz.jpg
+2025-05-03 12:15:19,061 - INFO - 文件大小: 2.90 MB
+2025-05-03 12:15:19,062 - DEBUG - tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+2025-05-03 12:15:19,062 - DEBUG - tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 86 - value: b'\x00\x00\x00H\x00\x00\x00\x01'
+2025-05-03 12:15:19,062 - DEBUG - tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 94 - value: b'\x00\x00\x00H\x00\x00\x00\x01'
+2025-05-03 12:15:19,063 - DEBUG - tag: Software (305) - type: string (2) Tag Location: 58 - Data Location: 102 - value: b'Photos 1.1\x00'
+2025-05-03 12:15:19,063 - DEBUG - tag: DateTime (306) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'2014:11:05 22:56:42\x00'
+2025-05-03 12:15:19,064 - DEBUG - tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\x86'
+2025-05-03 12:15:19,064 - INFO - 图片格式: JPEG, 尺寸: (5120, 2880), 模式: RGB
+2025-05-03 12:15:19,280 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/17aemhspq6lduybz.jpg
+2025-05-03 12:15:19,281 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/17aemhspq6lduybz.jpg
+2025-05-03 12:15:19,281 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\17aemhspq6lduybz.webp
+2025-05-03 12:15:27,159 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\17aemhspq6lduybz.webp
+2025-05-03 12:15:27,179 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/23.jpg
+2025-05-03 12:15:27,183 - INFO - 文件大小: 0.57 MB
+2025-05-03 12:15:27,184 - INFO - 图片格式: JPEG, 尺寸: (2250, 1500), 模式: RGB
+2025-05-03 12:15:27,226 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/23.jpg
+2025-05-03 12:15:27,226 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/23.jpg
+2025-05-03 12:15:27,227 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\23.webp
+2025-05-03 12:15:28,853 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\23.webp
+2025-05-03 12:15:28,857 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/45.jpg
+2025-05-03 12:15:28,859 - INFO - 文件大小: 3.36 MB
+2025-05-03 12:15:28,860 - INFO - 图片格式: JPEG, 尺寸: (3000, 2000), 模式: RGB
+2025-05-03 12:15:29,012 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/45.jpg
+2025-05-03 12:15:29,013 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/45.jpg
+2025-05-03 12:15:29,013 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\45.webp
+2025-05-03 12:15:32,133 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\45.webp
+2025-05-03 12:15:32,141 - INFO - 开始处理图片: D:/multi_handle_pic/ceshi/61b00f63e383d.jpg
+2025-05-03 12:15:32,143 - INFO - 文件大小: 2.54 MB
+2025-05-03 12:15:32,144 - INFO - 图片格式: JPEG, 尺寸: (3840, 2130), 模式: RGB
+2025-05-03 12:15:32,276 - INFO - 提取到 1 帧: D:/multi_handle_pic/ceshi/61b00f63e383d.jpg
+2025-05-03 12:15:32,277 - INFO - 处理第 1 帧: D:/multi_handle_pic/ceshi/61b00f63e383d.jpg
+2025-05-03 12:15:32,278 - DEBUG - 准备保存至: D:\multi_handle_pic\ceshi\pic\61b00f63e383d.webp
+2025-05-03 12:15:37,114 - INFO - 保存成功: D:\multi_handle_pic\ceshi\pic\61b00f63e383d.webp
+2025-05-03 12:15:37,122 - INFO - 转换任务完成，成功处理 24/24 张图片
