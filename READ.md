@@ -65,7 +65,7 @@ pyinstaller --noconfirm --onefile --windowed --icon=Converters.ico --add-data "C
 
 
 命令选项说明
-
+d
 --onedir：生成包含可执行文件和依赖的文件夹（推荐，兼容性高）。
 --windowed：以图形界面模式运行（无命令行窗口）。
 --icon：设置程序图标。
